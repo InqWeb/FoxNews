@@ -1,0 +1,3 @@
+#Запрет доступа к файлам:
+RedirectMatch 403 ^/data/.*$
+RedirectMatch 403 ^/includes/.*$

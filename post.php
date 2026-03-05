@@ -1,30 +1,5 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fox News — Заголовок поста</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">FOX NEWS</div>
-            <button class="burger" aria-label="Меню">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="index.php">Главная</a></li>
-                    <li><a href="archive.html">Архив</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
+<?php include 'includes/header.php'?>
     <main class="main-content">
         <div class="container">
             <article class="post-full">
@@ -70,13 +45,4 @@
             </section>
         </div>
     </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>FOX NEWS</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<?php include 'includes/footer.php'?>
