@@ -1,5 +1,8 @@
 
-<?php include 'includes/header.php'?>
+<?php 
+  include __DIR__ . "../templates/layouts/header.php" 
+?>
+
     <main class="main-content">
         <div class="container">
             <article class="post-full">
@@ -45,4 +48,7 @@
             </section>
         </div>
     </main>
-<?php include 'includes/footer.php'?>
+
+<?php 
+  include __DIR__ . "../templates/layouts/footer.php" 
+?>

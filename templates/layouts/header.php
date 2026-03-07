@@ -18,7 +18,7 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="index.php" class="active">Главная</a></li>
-                    <li><a href="archive.html">Архив</a></li>
+                    <li><a href="archive.php">Архив</a></li>
                     <li><a href="#">Контакты</a></li>
                 </ul>
             </nav>
