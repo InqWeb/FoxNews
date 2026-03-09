@@ -24,4 +24,25 @@
       print_r($post[$key]);
     }
   }
+
+  function postSortDate($jsonString){
+    $posts = json_decode($jsonString, true);
+    
+  }
+
+  function getOldPosts($jsonString) {
+      $posts = json_decode($jsonString, true);
+      $prevMonth = date('Y-m-d', strtotime('-1 month'));
+      $oldPosts = [];
+      
+      foreach ($posts as $post) {
+          // Проверяем, что поле date существует и имеет смысл
+          if (isset($post['date']) && $post['date'] < $prevMonth) {
+            $oldPosts[] = $post;
+          }
+      }
+      
+      return $oldPosts;
+  }
+
 ?>
