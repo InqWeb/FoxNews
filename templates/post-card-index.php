@@ -1,8 +1,13 @@
-<article class="post-card">
-  <a href="post.php"><img src="https://picsum.photos/400/200?random=1" alt="Пост 1"></a>
+<?php
+  $posts = postSortDate($jsonString);
+  foreach($posts as $post){
+?>
+<article class="post-card" id=<?php echo $post['id'] ?>>
+  <a href="post.php"><img src="<?php echo $post['image'] ?>" alt="Пост 1"></a>
   <div class="post-content">
-    <h3><a href="post.php">Заголовок поста 1</a></h3>
-    <p class="post-meta">12 марта 2026</p>
-    <p>Краткое содержание первого поста. Здесь мог быть ваш текст...</p>
+    <h3><a href="post.php"><?php echo $post['title'] ?></a></h3>
+    <p class="post-meta"><?php echo $post['date'] ?></p>
+    <p><?php echo $post['content'] ?></p>
   </div>
 </article>
+<?php } ?>

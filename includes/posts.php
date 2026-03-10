@@ -26,9 +26,21 @@
   }
 
   function postSortDate($jsonString){
+    #Переделать функцию, обязательно
     $posts = json_decode($jsonString, true);
-    
+    $postDate = [];
+    foreach ($posts as $post){
+      if(isset($post['date'])){
+        $postDate[] = $post["date"];
+      }else{
+        $postDate[] = '1970-01-01'; 
+      }
+      
+    }
+    array_multisort($postDate, SORT_STRING, $posts);
+    return array_reverse($posts);
   }
+
 
   function getOldPosts($jsonString) {
       $posts = json_decode($jsonString, true);

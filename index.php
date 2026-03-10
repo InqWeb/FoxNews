@@ -1,5 +1,6 @@
 <?php 
-  include __DIR__ . "../templates/layouts/header.php" 
+  include __DIR__ . "../templates/layouts/header.php";
+  include __DIR__ . "../includes/posts.php";
 ?>
 
 <section class="hero">
