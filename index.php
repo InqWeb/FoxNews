@@ -1,6 +1,14 @@
 <?php 
   include __DIR__ . "../templates/layouts/header.php";
   include __DIR__ . "../includes/posts.php";
+  include_once __DIR__ . "../includes/pagination.php";
+  include 'templates/post-card-index.php';
+  $posts = postSortDate($jsonString);
+  $paginated = paginatePosts($posts);
+  $postsOnPage = $paginated['posts'];
+  $totalPages = $paginated['totalPages'];
+  $currentPage = $paginated['currentPage'];
+
 ?>
 
 <section class="hero">
@@ -36,7 +44,8 @@
     <section class="posts">
       <h2 class="section-title">Последние посты</h2>
       <div class="posts-grid">
-        <?php include 'templates/post-card-index.php'; ?>
+        <?php TemplateIndexPost($posts, $postsOnPage) ?>
+        
       </div>
 
     </section>
@@ -44,12 +53,13 @@
     <?php include 'templates/sidebar.php'; ?>
 
     <nav class="pagination-dots">
-        <span class="dot active" data-page="1"></span>
+        <?php renderPaginationDots($totalPages, $currentPage); ?>
+        <!-- <span class="dot active" data-page="1"></span>
         <span class="dot" data-page="2"></span>
         <span class="dot" data-page="3"></span>
         <span class="dot" data-page="4"></span>
         <span class="dot" data-page="5"></span>
-        <span class="dot" data-page="6"></span>
+        <span class="dot" data-page="6"></span> -->
     </nav>
 
 
